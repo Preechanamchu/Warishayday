@@ -1,0 +1,26 @@
+{
+  "name": "warishayday-store-management",
+  "version": "1.0.0",
+  "description": "Backend API for Warishayday Thai online shop management system",
+  "main": "update-store.js",
+  "scripts": {
+    "start": "node update-store.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.11.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "store-management",
+    "api",
+    "netlify-functions",
+    "postgresql"
+  ],
+  "author": "MiniMax Agent",
+  "license": "MIT"
+}
