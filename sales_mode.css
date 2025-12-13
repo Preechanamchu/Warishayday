@@ -1,0 +1,71 @@
+/* Sales Mode Toggle Custom Styles */
+.sales-mode-container {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: #f1f5f9;
+    padding: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    user-select: none; /* Prevent text selection on double click */
+}
+
+.sales-mode-toggle {
+    display: flex;
+    flex-direction: column; /* Stacked vertically as requested implicitly by the image layout, checking... wait, image shows one big blue bar and one gray. It looks like a toggle switch but maybe vertical or horizontal. The robust way is likely stacked or just regular buttons that span full width. Let's stick to the image: Top blue, Bottom gray text? OR Left Right? The request says "Pral button ... left and right". Let's do horizontal flex. */
+    flex-direction: column; /* Based on image: "Main 10" is a big blue bar, "Pieces" is below it in gray text? Or is it a toggle?
+    Re-reading request: "Adjust to be buttons on Left and Right".
+    Okay, I will make it a horizontal toggle with 50% width each. */
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mode-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #64748b;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.mode-option.active {
+    color: white;
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); /* Bright Blue Gradient */
+    box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3);
+}
+
+/* Custom design for specific look in image (optional refinement) */
+/* If the user wants specific "Top/Bottom" look as per the red circle in the image which seems to encompass a blue bar and text below...
+   Wait, the user said "Adjust Buttons Left and Right". So I will stick to Row layout. */
+
+.mode-lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    z-index: 10;
+    cursor: not-allowed;
+}
+
+.lock-icon {
+    font-size: 24px;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
