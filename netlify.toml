@@ -1,0 +1,15 @@
+# netlify.toml
+# This file configures the build and deployment settings for Netlify.
+
+[build]
+  # Directory where your serverless functions are located.
+  functions = "netlify/functions"
+
+[[redirects]]
+  # This rule redirects all requests from /api/* to the corresponding
+  # serverless function in the `netlify/functions` directory.
+  # For example, a request to /api/store-requests-api will be handled
+  # by the netlify/functions/store-requests-api.js file.
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

@@ -1,0 +1,356 @@
+/* ===== 13 SUCCESS ANIMATIONS - Custom Designs ===== */
+
+/* Base Container */
+.sa-anim-1, .sa-anim-2, .sa-anim-3, .sa-anim-4, .sa-anim-5,
+.sa-anim-6, .sa-anim-7, .sa-anim-8, .sa-anim-9, .sa-anim-10,
+.sa-anim-11, .sa-anim-12, .sa-anim-13 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform: scale(var(--sa-size, 1));
+}
+
+/* Default Check */
+.sa-default-check {
+    font-size: 80px;
+    color: var(--sa-primary-color, #28a745);
+    animation: sa-pop 0.5s ease;
+}
+
+@keyframes sa-pop {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* ===== Animation 1: เครื่องหมายยืนยันสำเร็จ ===== */
+.sa-checkmark-celebration {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    animation: sa1-checkmark 5.6s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+}
+
+.sa-checkmark-celebration .sa-back-shape {
+    width: 120px;
+    height: 115px;
+    animation: sa1-rotate 35s linear infinite;
+}
+
+.sa-checkmark-celebration .sa-check-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 36px;
+    z-index: 10;
+}
+
+.sa-checkmark-celebration .sa-confetti {
+    position: absolute;
+    animation: sa1-grow 1.4s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+}
+
+.sa-checkmark-celebration .sa-confetti { width: 12px; height: 12px; left: 12px; top: 16px; animation-delay: 0.7s; }
+.sa-checkmark-celebration .sa-confetti.c2 { width: 18px; height: 18px; left: 138px; top: 84px; animation-delay: 1.4s; }
+.sa-checkmark-celebration .sa-confetti.c3 { width: 10px; height: 10px; left: 32px; top: 132px; animation-delay: 2.1s; }
+.sa-checkmark-celebration .sa-confetti.c4 { width: 20px; height: 20px; left: 72px; top: -12px; animation-delay: 2.8s; }
+.sa-checkmark-celebration .sa-confetti.c5 { width: 14px; height: 14px; left: 115px; top: 132px; animation-delay: 3.5s; }
+.sa-checkmark-celebration .sa-confetti.c6 { width: 10px; height: 10px; left: 16px; top: 16px; animation-delay: 4.2s; }
+
+@keyframes sa1-grow { 0%, 100% { transform: scale(0); } 50% { transform: scale(1); } }
+@keyframes sa1-checkmark { 0% { opacity: 0; transform: scale(0); } 10%, 50%, 100% { opacity: 1; transform: scale(1); } }
+@keyframes sa1-rotate { 0% { transform: rotate(0deg); } 70% { transform: rotate(360deg); } 100% { transform: rotate(420deg); } }
+
+/* ===== Animation 2: เครื่องหมายสีเหลือง ===== */
+.sa-yellow-check {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.sa-yellow-check .sa-trophy {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+    animation: sa2-trophy 0.5s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sa-yellow-check .sa-trophy svg { width: 80%; height: 80%; }
+
+.sa-confetti-yellow, .sa-confetti-purple {
+    position: absolute;
+    height: 50px;
+    width: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 0.75s;
+    animation-delay: 0.35s;
+}
+
+.sa-confetti-yellow { background: var(--sa-secondary-color, #FFEA00); top: 0; left: calc(50% - 5px); animation-name: sa2-fly-up; }
+.sa-confetti-yellow.two { top: auto; bottom: 0; animation-name: sa2-fly-down; }
+.sa-confetti-yellow.three { top: calc(50% - 25px); left: 0; height: 10px; width: 50px; animation-name: sa2-fly-left; }
+.sa-confetti-yellow.four { top: calc(50% - 25px); right: 0; left: auto; height: 10px; width: 50px; animation-name: sa2-fly-right; }
+
+.sa-confetti-purple { background: #6200EA; animation-delay: 0.5s; transform: rotate(135deg); left: 10%; top: 10%; animation-name: sa2-fly-ul; }
+.sa-confetti-purple.two { left: auto; right: 10%; transform: rotate(45deg); animation-name: sa2-fly-ur; }
+.sa-confetti-purple.three { top: auto; bottom: 10%; transform: rotate(45deg); animation-name: sa2-fly-dl; }
+.sa-confetti-purple.four { top: auto; bottom: 10%; left: auto; right: 10%; transform: rotate(135deg); animation-name: sa2-fly-dr; }
+
+@keyframes sa2-trophy { 0% { transform: translateY(100px); opacity: 0; } 35% { opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes sa2-fly-up { 0% { transform: translateY(10px); opacity: 0; } 60% { opacity: 1; } 100% { transform: translateY(-80px); opacity: 0; } }
+@keyframes sa2-fly-down { 0% { transform: translateY(-10px); opacity: 0; } 60% { opacity: 1; } 100% { transform: translateY(80px); opacity: 0; } }
+@keyframes sa2-fly-left { 0% { transform: translateX(10px); opacity: 0; } 60% { opacity: 1; } 100% { transform: translateX(-80px); opacity: 0; } }
+@keyframes sa2-fly-right { 0% { transform: translateX(-10px); opacity: 0; } 60% { opacity: 1; } 100% { transform: translateX(80px); opacity: 0; } }
+@keyframes sa2-fly-ul { 0% { transform: rotate(135deg) translate(0, 0); opacity: 0; } 60% { opacity: 1; } 100% { transform: rotate(135deg) translate(-10px, 60px); opacity: 0; } }
+@keyframes sa2-fly-ur { 0% { transform: rotate(45deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: rotate(45deg) translate(-10px, -60px); opacity: 0; } }
+@keyframes sa2-fly-dl { 0% { transform: rotate(45deg) translate(0, 0); opacity: 0; } 60% { opacity: 1; } 100% { transform: rotate(45deg) translate(-10px, 60px); opacity: 0; } }
+@keyframes sa2-fly-dr { 0% { transform: rotate(135deg) translate(0, 0); opacity: 0; } 60% { opacity: 1; } 100% { transform: rotate(135deg) translate(0, -60px); opacity: 0; } }
+
+/* ===== Animation 3: เครื่องหมายถูกสีเขียว ===== */
+.sa-green-check {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sa-green-check .sa-check-bg {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(to bottom right, var(--sa-primary-color, #5de593), var(--sa-secondary-color, #41d67c));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: sa3-container 0.75s ease-out 0.75s forwards;
+    box-shadow: 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+}
+
+.sa-green-check .sa-check-bg svg {
+    width: 65%;
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: sa3-check 0.35s ease-out 1.25s forwards;
+}
+
+.sa-green-check .sa-check-shadow {
+    width: 85%;
+    height: 15%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, var(--sa-primary-color, rgba(73, 218, 131, 0.8)), transparent);
+    margin-top: 10px;
+    opacity: 0;
+    animation: sa3-shadow 0.75s ease-out 0.75s forwards;
+}
+
+@keyframes sa3-container { 0% { opacity: 0; transform: scale(0); } 25% { opacity: 1; transform: scale(0.9); } 43.75% { transform: scale(1.15); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes sa3-check { 0% { stroke-dashoffset: 80; } 100% { stroke-dashoffset: 0; } }
+@keyframes sa3-shadow { 0% { opacity: 0; width: 100%; } 25% { opacity: 0.25; } 100% { width: 85%; opacity: 0.25; } }
+
+/* ===== Animation 4: ยอดเยี่ยมกระเทียมดอง ===== */
+.sa-thumbsup {
+    position: relative;
+    width: 187px;
+    height: 109px;
+}
+
+.sa-thumbsup svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.sa-thumbsup .sa-stripes { fill: #f7f7f7; animation: sa4-stripes 1.3s ease-in-out infinite; z-index: 0; }
+.sa-thumbsup .sa-stars { fill: var(--sa-secondary-color, #febb02); z-index: 1; }
+.sa-thumbsup .sa-hand { animation: sa4-shake 1.3s ease-in-out infinite; z-index: 2; }
+
+.sa-thumbsup .sa-stars.s1 { animation: sa4-star1 1.3s infinite; }
+.sa-thumbsup .sa-stars.s2 { animation: sa4-star2 1.3s infinite; }
+.sa-thumbsup .sa-stars.s3 { animation: sa4-star3 1.3s infinite; }
+.sa-thumbsup .sa-stars.s4 { animation: sa4-star4 1.3s infinite; }
+.sa-thumbsup .sa-stars.s5 { animation: sa4-star5 1.3s infinite; }
+
+@keyframes sa4-star1 { 0% { transform: translate(20%, 40%) scale(0.76); opacity: 0; } 12.8% { opacity: 1; } 28.2% { transform: translate(0, 0) scale(1); } }
+@keyframes sa4-star2 { 0% { transform: translate(-14%, 40%) scale(0.76); opacity: 0; } 12.8% { opacity: 1; } 28.2% { transform: translate(0, 0) scale(1); } }
+@keyframes sa4-star3 { 0% { transform: translate(5%, -35%) scale(0.76); opacity: 0; } 12.8% { opacity: 1; } 28.2% { transform: translate(0, 0) scale(1); } }
+@keyframes sa4-star4 { 0% { transform: translate(30%, 0) scale(0.76); opacity: 0; } 12.8% { opacity: 1; } 28.2% { transform: translate(0, 0) scale(1); } }
+@keyframes sa4-star5 { 0% { transform: translate(-20%, 0) scale(0.76); opacity: 0; } 12.8% { opacity: 1; } 28.2% { transform: translate(0, 0) scale(1); } }
+@keyframes sa4-shake { 0% { transform: rotate(20deg) scale(0.74); opacity: 0.1; } 7.7% { opacity: 1; transform: rotate(0) scale(1); } 15.4% { transform: rotate(-11deg) scale(1.08); } 28.2% { transform: rotate(0) scale(1); } }
+@keyframes sa4-stripes { 20.5% { transform: translate(4%, 0); } 38.4% { transform: translate(-2%, 0); } 59% { transform: translate(3.7%, 0); } 79.5% { transform: translate(0, 0); } }
+
+/* ===== Animation 5: วงล้อแห่งความสำเร็จ ===== */
+.sa-orbit-check { position: relative; width: 180px; height: 165px; }
+.sa-orbit-check svg { width: 100%; height: 100%; }
+
+.sa-orbit-check .sa-circle-gray, .sa-orbit-check .sa-circle-yellow, .sa-orbit-check .sa-circle-blue,
+.sa-orbit-check .sa-tick-gray, .sa-orbit-check .sa-tick-yellow, .sa-orbit-check .sa-tick-blue {
+    fill: none;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+.sa-orbit-check .sa-circle-gray { stroke: #ECECEC; stroke-dasharray: 675; animation: sa5-circle 1s ease 0.1s both; }
+.sa-orbit-check .sa-circle-yellow { stroke: var(--sa-secondary-color, #fb0); stroke-dasharray: 675; animation: sa5-circle 1s ease 0.36s both; }
+.sa-orbit-check .sa-circle-blue { stroke: var(--sa-primary-color, #0a2f73); stroke-dasharray: 675; animation: sa5-circle 1s ease 0.57s both; }
+
+.sa-orbit-check .sa-tick-gray { stroke: #ECECEC; stroke-dasharray: 304; animation: sa5-tick 0.48s ease 1s both; }
+.sa-orbit-check .sa-tick-yellow { stroke: var(--sa-secondary-color, #fb0); stroke-dasharray: 304; animation: sa5-tick 0.49s ease 1.2s both; }
+.sa-orbit-check .sa-tick-blue { stroke: var(--sa-primary-color, #0a2f73); stroke-dasharray: 304; animation: sa5-tick 0.49s ease 1.37s both; }
+
+@keyframes sa5-circle { 0% { stroke-dashoffset: -675; transform: rotate(-180deg); } 100% { stroke-dashoffset: 0; transform: rotate(0deg); } }
+@keyframes sa5-tick { 0% { stroke-dashoffset: 304; } 100% { stroke-dashoffset: 0; } }
+
+/* ===== Animation 6: เช็คถูกสายปาร์ตี้ ===== */
+.sa-party-check { position: relative; width: 150px; height: 150px; }
+
+.sa-party-check .sa-checkmark-svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    border-radius: 50%;
+    animation: sa6-fill 0.4s ease-in-out 0.4s forwards, sa6-scale 0.3s ease-in-out 0.9s both;
+    box-shadow: inset 0px 0px 0px var(--sa-primary-color, #9eec94);
+}
+
+.sa-party-check .sa-checkmark-circle { stroke-dasharray: 166; stroke-dashoffset: 166; stroke: var(--sa-primary-color, #9eec94); animation: sa6-stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards; }
+.sa-party-check .sa-checkmark-path { stroke-dasharray: 48; stroke-dashoffset: 48; animation: sa6-stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards; }
+
+.sa-party-check .sa-confetti-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.sa-party-check .sa-confetti-piece { position: absolute; width: 10px; height: 14px; opacity: 0; }
+
+.sa-party-check .sa-confetti-piece:nth-child(1) { background: #E91E63; animation: sa6-fall1 4s ease-in-out infinite 0.2s; }
+.sa-party-check .sa-confetti-piece:nth-child(2) { background: #2196F3; animation: sa6-fall2 4s ease-in-out infinite 0.4s; }
+.sa-party-check .sa-confetti-piece:nth-child(3) { background: #FFEB3B; animation: sa6-fall3 4s ease-in-out infinite 0.6s; }
+.sa-party-check .sa-confetti-piece:nth-child(4) { background: #4CAF50; animation: sa6-fall4 4s ease-in-out infinite 0.8s; }
+.sa-party-check .sa-confetti-piece:nth-child(5) { background: #FF9800; animation: sa6-fall1 4s ease-in-out infinite 1s; }
+.sa-party-check .sa-confetti-piece:nth-child(6) { background: #9C27B0; animation: sa6-fall2 4s ease-in-out infinite 1.2s; }
+.sa-party-check .sa-confetti-piece:nth-child(7) { background: #00BCD4; animation: sa6-fall3 4s ease-in-out infinite 1.4s; }
+.sa-party-check .sa-confetti-piece:nth-child(8) { background: #F44336; animation: sa6-fall4 4s ease-in-out infinite 1.6s; }
+.sa-party-check .sa-confetti-piece:nth-child(9) { background: #CDDC39; animation: sa6-fall1 4s ease-in-out infinite 1.8s; }
+.sa-party-check .sa-confetti-piece:nth-child(10) { background: #673AB7; animation: sa6-fall2 4s ease-in-out infinite 2s; }
+
+@keyframes sa6-stroke { 100% { stroke-dashoffset: 0; } }
+@keyframes sa6-scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
+@keyframes sa6-fill { 100% { box-shadow: inset 0px 0px 0px 100px var(--sa-primary-color, #9eec94); } }
+@keyframes sa6-fall1 { 0% { top: -5%; left: 10%; opacity: 1; transform: skew(-30deg); } 50% { left: 80%; transform: skew(30deg); } 100% { top: 100%; left: 20%; opacity: 1; transform: skew(-30deg); } }
+@keyframes sa6-fall2 { 0% { top: -5%; left: 30%; opacity: 1; transform: skew(-30deg); } 50% { left: 60%; transform: skew(30deg); } 100% { top: 100%; left: 40%; opacity: 1; transform: skew(-30deg); } }
+@keyframes sa6-fall3 { 0% { top: -5%; left: 50%; opacity: 1; transform: skew(-30deg); } 50% { left: 20%; transform: skew(30deg); } 100% { top: 100%; left: 60%; opacity: 1; transform: skew(-30deg); } }
+@keyframes sa6-fall4 { 0% { top: -5%; left: 75%; opacity: 1; transform: skew(-30deg); } 50% { left: 40%; transform: skew(30deg); } 100% { top: 100%; left: 85%; opacity: 1; transform: skew(-30deg); } }
+
+/* ===== Animation 7: ยืนยันฉับไว ===== */
+.sa-cyan-pop {
+    width: 104px;
+    height: 104px;
+    background: var(--sa-primary-color, #00CAD9);
+    border-radius: 50%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    animation: sa7-circle 0.5s cubic-bezier(.42, .97, .52, 1.49);
+}
+
+.sa-cyan-pop .sa-check-mark::after {
+    content: '';
+    position: absolute;
+    top: 52px;
+    left: 23px;
+    opacity: 0;
+    height: 52px;
+    width: 28px;
+    border-right: 3px solid #fff;
+    border-top: 3px solid #fff;
+    transform-origin: left top;
+    transform: scaleX(-1) rotate(135deg);
+    animation: sa7-checkmark 0.9s cubic-bezier(.42, .97, .52, 1.49) 0.6s forwards;
+}
+
+@keyframes sa7-circle { 0% { opacity: 0; transform: scale(0.5); } 50% { transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes sa7-checkmark { 0% { height: 0; width: 0; opacity: 0; } 20% { height: 0; width: 28px; opacity: 1; } 40%, 100% { height: 52px; width: 28px; opacity: 1; } }
+
+/* ===== Animation 8: ประกายดาวแห่งความสำเร็จ ===== */
+.sa-sparkle-success { position: relative; width: 180px; height: 180px; }
+.sa-sparkle-success svg { width: 100%; height: 100%; }
+.sa-sparkle-success .sa-check-path { stroke-dasharray: 500; stroke-dashoffset: 500; animation: sa8-draw 2s ease forwards; }
+.sa-sparkle-success .sa-sparkles-wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+@keyframes sa8-draw { 0% { stroke-dashoffset: 500; } 100% { stroke-dashoffset: 0; } }
+
+/* ===== Animation 9: เครื่องหมายถูกโพลีกอน ===== */
+.sa-polygon-check { position: relative; width: 148px; height: 148px; }
+.sa-polygon-check svg { width: 100%; height: 100%; overflow: visible; }
+
+.sa-polygon-check .sa-circle-stroke { fill: none; stroke: var(--sa-primary-color, #24A8AF); stroke-width: 5; stroke-dasharray: 210; stroke-dashoffset: 210; animation: sa9-stroke 1.5s ease 0.8s forwards; opacity: 0; }
+.sa-polygon-check .sa-circle-fill { fill: var(--sa-primary-color, #24A8AF); opacity: 0; animation: sa9-fill 3s ease 1s forwards; }
+.sa-polygon-check .sa-tick-path { stroke: #fff; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 180; stroke-dashoffset: 180; animation: sa9-tick 2s ease 2s forwards; }
+
+@keyframes sa9-stroke { 0% { opacity: 0; stroke-dashoffset: 210; } 100% { opacity: 1; stroke-dashoffset: 0; } }
+@keyframes sa9-fill { 0% { opacity: 0; } 80%, 100% { opacity: 1; } }
+@keyframes sa9-tick { 0% { stroke-dashoffset: 180; } 100% { stroke-dashoffset: 0; } }
+
+/* ===== Animation 10: รถเข็นยืนยันคำสั่งซื้อ ===== */
+.sa-cart-success { position: relative; width: 180px; height: 180px; }
+.sa-cart-success svg { width: 100%; height: 100%; overflow: visible; }
+
+.sa-cart-success .sa-cart-path { stroke: #999; stroke-width: 4; fill: transparent; stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: sa10-cart 1.5s linear forwards; }
+.sa-cart-success .sa-cart-check { transform: scale(0.35) translate(460px, 290px); }
+.sa-cart-success .sa-cart-check path { transform-origin: center; transform: scale(0); animation: sa10-check 0.6s cubic-bezier(0.75, -0.5, 0, 1.75) 1.8s forwards; filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); }
+
+@keyframes sa10-cart { 0% { fill: transparent; stroke-dashoffset: 3000; } 75% { fill: transparent; stroke-dashoffset: 0; } 100% { fill: #ccc; stroke: #bfbfbf; stroke-dashoffset: 0; } }
+@keyframes sa10-check { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+
+/* ===== Animation 11: ยืนยันสุดคูล ===== */
+.sa-cool-thumbs { display: flex; flex-direction: column; align-items: center; }
+.sa-cool-thumbs svg { width: 120px; height: 120px; animation: sa11-popup 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.sa-cool-thumbs .sa-cool-text { color: var(--sa-primary-color, #fafafa); font-size: 1.2rem; letter-spacing: 1.2px; opacity: 0; animation: sa11-fadeup 2s 0.5s forwards; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+@keyframes sa11-popup { 0% { opacity: 0; transform: scale(0.1) rotate(0deg); } 50% { transform: scale(1.4) rotate(-20deg); opacity: 1; } 60% { transform: scale(1.1) rotate(-10deg); } 70% { transform: scale(1.2) rotate(5deg); } 80% { transform: scale(1) rotate(0deg); } 90% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes sa11-fadeup { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
+
+/* ===== Animation 12: เครื่องหมายถูกหมุนไล่สี ===== */
+.sa-gradient-spin { position: relative; width: 180px; height: 180px; display: flex; justify-content: center; align-items: center; }
+
+.sa-gradient-spin .sa-spin-bg { position: relative; animation: sa12-spin 6s ease-in infinite; }
+.sa-gradient-spin .sa-spin-first, .sa-gradient-spin .sa-spin-second { width: 140px; height: 140px; border-radius: 20%; }
+.sa-gradient-spin .sa-spin-first { background: linear-gradient(120deg, #B921E6 -147%, #9366F5 -64%, #3DA0F1 24%, #68DBCA 105%); }
+.sa-gradient-spin .sa-spin-second { background: linear-gradient(75deg, #B921E6 -147%, #9366F5 -64%, #3DA0F1 24%, #68DBCA 105%); position: absolute; top: 0; left: 0; transform: rotate(45deg); }
+
+.sa-gradient-spin .sa-spin-check { position: absolute; width: 70px; height: 70px; animation: sa12-tick 6s ease-in infinite; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2)); }
+.sa-gradient-spin .sa-spin-check svg { width: 100%; height: 100%; }
+
+@keyframes sa12-spin { 0% { transform: scale(0) rotate(0deg); } 25% { transform: scale(1) rotate(45deg); } 75% { transform: scale(1) rotate(90deg); } 100% { transform: scale(0) rotate(145deg); } }
+@keyframes sa12-tick { 0% { transform: scale(0); } 25% { transform: scale(1); } 75% { transform: scale(1); } 100% { transform: scale(0); } }
+
+/* ===== Animation 13: ยืนยันฉบับปาร์ตี้ ===== */
+.sa-pink-burst { --brand: var(--sa-primary-color, #ff0075); --size: 180px; position: relative; width: var(--size); height: var(--size); display: flex; align-items: center; justify-content: center; }
+
+.sa-pink-burst .sa-wave-circle { width: var(--size); height: var(--size); position: absolute; background: var(--brand); animation: sa13-rotateDown 1s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.sa-pink-burst .sa-wave-circle { -webkit-mask: radial-gradient(calc(var(--size)*0.443),#000 99%,#0000 101%); mask: radial-gradient(calc(var(--size)*0.443),#000 99%,#0000 101%); }
+
+.sa-pink-burst .sa-center-circle { width: calc(var(--size) - 40px); height: calc(var(--size) - 40px); background: var(--brand); border-radius: 50%; position: absolute; z-index: 2; animation: sa13-scaleCircle 0.8s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+.sa-pink-burst .sa-burst-icon { position: absolute; z-index: 3; width: 70px; height: 70px; animation: sa13-scaleIcon 0.5s 0.2s backwards; }
+
+.sa-pink-burst .sa-particles { position: absolute; z-index: 1; top: 50%; left: 50%; }
+.sa-pink-burst .sa-particles span { position: absolute; width: calc(var(--size) / 10); height: calc(var(--size) / 10); display: block; background: var(--brand); border-radius: 50%; animation: sa13-shoot 1s ease-out; transform: translate(-50%, -50%); }
+.sa-pink-burst .sa-particles span:nth-child(1) { --angle: 0deg; }
+.sa-pink-burst .sa-particles span:nth-child(2) { --angle: 45deg; animation-delay: 0.05s; }
+.sa-pink-burst .sa-particles span:nth-child(3) { --angle: 90deg; animation-delay: 0.1s; }
+.sa-pink-burst .sa-particles span:nth-child(4) { --angle: 135deg; animation-delay: 0.05s; }
+.sa-pink-burst .sa-particles span:nth-child(5) { --angle: 180deg; animation-delay: 0.1s; }
+.sa-pink-burst .sa-particles span:nth-child(6) { --angle: 225deg; animation-delay: 0.05s; }
+.sa-pink-burst .sa-particles span:nth-child(7) { --angle: 270deg; animation-delay: 0.1s; }
+.sa-pink-burst .sa-particles span:nth-child(8) { --angle: 315deg; animation-delay: 0.05s; }
+
+@keyframes sa13-rotateDown { 0% { transform: rotate(0deg) scale(0); opacity: 0; } 50% { opacity: 1; } 100% { transform: rotate(45deg) scale(.8); } }
+@keyframes sa13-scaleCircle { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes sa13-scaleIcon { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+@keyframes sa13-shoot { 0% { transform: rotate(var(--angle)) translateX(0) scale(1); } 70% { transform: rotate(var(--angle)) translateX(calc(var(--size) / 1.5)) scale(0.6); } 100% { transform: rotate(var(--angle)) translateX(calc(var(--size) / 1.3)) scale(0); opacity: 0; } }
